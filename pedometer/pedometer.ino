@@ -8,9 +8,11 @@ int Yread;
 int Zread;
 
 int offset;
+int steps;
 
 void setup() {
   Serial.begin(9600);
+  offset = 0;
 }
 
 void loop() {
@@ -26,4 +28,9 @@ void loop() {
 //  Serial.print(",");
 //  Serial.println(avg);
   
+}
+
+void count()
+{
+    if(    
 }
