@@ -15,6 +15,8 @@ void setup() {
   offset = 2400;
   steps = 0;
   flag = 0;
+
+  pinMode(RED_LED,OUTPUT);
 }
 
 void loop() {
@@ -24,25 +26,20 @@ void loop() {
 
   count();
 
-//  Serial.print(Xread);
-//  Serial.print(",");
-//  Serial.print(Yread);
-//  Serial.print(",");
-//  Serial.println(Zread);
-//  Serial.print(",");
-//  Serial.println(avg);
-  Serial.println(steps);
-
 }
 
 void count()
 {
-    if(Yread >= 300 && flag == 0)
+    if(Yread >= 400 && flag == 0)
     {
         flag = 1;
+        digitalWrite(RED_LED,HIGH);
         steps++;
-    }else if(Yread < 300 && flag == 1)
+        Serial.println(steps);
+    }else if(Yread < 200 && flag == 1)
     {
         flag = 0;
+        digitalWrite(RED_LED,LOW);
     }
+    
 }
