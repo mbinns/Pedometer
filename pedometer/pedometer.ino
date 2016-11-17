@@ -28,6 +28,7 @@ void loop() {
 //  Serial.print(",");
 //  Serial.println(avg);
   Serial.println(steps);
+
 }
 
 void count()
