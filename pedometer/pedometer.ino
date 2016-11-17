@@ -12,7 +12,7 @@ int steps;
 
 void setup() {
   Serial.begin(9600);
-  offset = 0;
+  offset = 2400;
 }
 
 void loop() {
@@ -20,17 +20,20 @@ void loop() {
   int Yread = analogRead(YPIN)-offset;
   int Zread = analogRead(ZPIN)-offset;
 
-  Serial.print(Xread);
-  Serial.print(",");
-  Serial.print(Yread);
-  Serial.print(",");
-  Serial.println(Zread);
+//  Serial.print(Xread);
+//  Serial.print(",");
+//  Serial.print(Yread);
+//  Serial.print(",");
+//  Serial.println(Zread);
 //  Serial.print(",");
 //  Serial.println(avg);
-  
+  Serial.println(steps);
 }
 
 void count()
 {
-    if(    
+    if(y >= 300)
+    {
+        steps++;
+    }
 }
