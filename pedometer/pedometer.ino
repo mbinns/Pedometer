@@ -13,6 +13,8 @@ int steps;
 void setup() {
   Serial.begin(9600);
   offset = 2400;
+  steps = 0;
+  flag = 0;
 }
 
 void loop() {
@@ -35,8 +37,12 @@ void loop() {
 
 void count()
 {
-    if(Yread >= 300)
+    if(Yread >= 300 && flag == 0)
     {
+        flag = 1;
         steps++;
+    }else if(Yread < 300 && flag == 1)
+    {
+        flag = 0;
     }
 }
