@@ -6,14 +6,13 @@
 int Xread;
 int Yread;
 int Zread;
-
+int flag;
 int offset;
-int steps=0;
+int steps;
 
 void setup() {
   Serial.begin(9600);
   offset = 2400;
-  steps = 0;
 }
 
 void loop() {
