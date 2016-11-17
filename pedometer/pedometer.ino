@@ -8,11 +8,12 @@ int Yread;
 int Zread;
 
 int offset;
-int steps;
+int steps=0;
 
 void setup() {
   Serial.begin(9600);
   offset = 2400;
+  steps = 0;
 }
 
 void loop() {
