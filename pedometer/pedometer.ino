@@ -16,9 +16,11 @@ void setup() {
 }
 
 void loop() {
-  int Xread = analogRead(XPIN)-offset;
-  int Yread = analogRead(YPIN)-offset;
-  int Zread = analogRead(ZPIN)-offset;
+  Xread = analogRead(XPIN)-offset;
+  Yread = analogRead(YPIN)-offset;
+  Zread = analogRead(ZPIN)-offset;
+
+  count();
 
 //  Serial.print(Xread);
 //  Serial.print(",");
@@ -33,7 +35,7 @@ void loop() {
 
 void count()
 {
-    if(y >= 300)
+    if(Yread >= 300)
     {
         steps++;
     }
